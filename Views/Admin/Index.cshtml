@@ -1,0 +1,32 @@
+﻿@model Sagar_bookstore.user
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome to admin pannel</h2>
+<table>
+    @{ 
+
+        Html.BeginForm("Index" , "Admin" , FormMethod.Post);
+            <tr>
+                <td>User Name :</td>
+                <td>@Html.TextBoxFor(a => a.u_name)</td>
+
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td>@Html.PasswordFor(a => a.u_password )</td>
+                               
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Login" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">@ViewBag.msg</td>
+            </tr>
+    }
+
+
+
+</table>
+

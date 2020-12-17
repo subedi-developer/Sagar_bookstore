@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Sagar_bookstore.product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.p_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.p_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.p_qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.p_details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.category.cat_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.order.o_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.p_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.p_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.p_qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.p_details)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category.cat_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.order.o_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.p_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.p_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.p_id })
+        </td>
+    </tr>
+}
+   
+</table>

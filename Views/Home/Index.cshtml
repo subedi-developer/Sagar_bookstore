@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Beady's Book</h1>
+</div>
+
+<p class="lead"> Read, relax and go on for good</p>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<script>
+    $(function () {
+        $("#draggable").draggable();
+        $("#droppable").droppable({
+            drop: function (event, ui) {
+                $(this)
+                    .addClass("ui-state-highlight")
+                    .find("p")
+                    .html("Dropped!");
+            }
+        });
+    });
+</script>
+<!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The form -->
+<form class="example" action="action_page.php">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+
+</form>
+
+
+<div class="row">
+    <div class="column1">
+        <div>
+
+
+            <img src="~/Content/image/22.jpg" /><button class="w3-button w3-black">Add to cart</button>
+            <img src="~/Content/image/33.jpg" /><button class="w3-button w3-black">Add to cart</button>
+            <img src="~/Content/image/44.jpg" /><button class="w3-button w3-black">Add to cart</button>
+            <img src="~/Content/image/55.jpg" /><button class="w3-button w3-black">Add to cart</button>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
